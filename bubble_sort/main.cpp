@@ -39,7 +39,10 @@ int main(){
     int n = 10000;
     //generate an array composed by nums lt 100 
     int* a = SortTest::generateRandomArray(n, 0, 100);
-    
+    int* b = SortTest::copyIntArray(a, n);
+    SortTest::testSort("Bubble Sort", bubbleSort, a, n);
+    SortTest::testSort("Bubble SortII", bubbleSortII, b, n);
     delete[] a;
+    delete[] b;
     return 0;
 }
