@@ -1,5 +1,5 @@
 //
-// Created by 刘亮奇 on 2017/3/13.
+// Created by Liangqi on 2017/3/13.
 //
 
 #ifndef ALGORITHM_SORTTESTHELPER_H
