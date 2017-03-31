@@ -25,3 +25,26 @@
             __shiftdown(arr, i, 0);
         }
     }
+
+
+//this function should use heap with constructor heap(Item arr[], int n)
+    template<typename Item>
+    void heapSort(Item arr[], int n){
+        MaxHeap<Item> maxHeap = MaxHeap<Item>(arr, n);
+        for(itn i = n - 1; i >=0; i --){
+            arr[i] = maxHeap.extractMax();
+        }
+    }
+    
+    //this function just use the constructor heap(int n)
+    template<typename Item>
+    void heapSortII(Item arr[], int n){
+        MaxHeap<Item> maxHeap = MaxHeap<Item>(n);
+        for(int i = 0; i < n; i++){
+            maxHeap.insert(arr[i]);
+        }
+        
+        for(int i = n - 1; i >= 0; i--){
+            arr[i] = maxHeap.extarctMax();
+        }
+    }
