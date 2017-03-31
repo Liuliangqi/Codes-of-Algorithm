@@ -76,6 +76,7 @@ public:
     }
     
     Item extractMax(){
+        assert(count > 0);
         Item ret = data[1];
         
         swap(data[count], data[1]);
