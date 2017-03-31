@@ -42,6 +42,20 @@ public:
         this->capacity = capacity;
     }
     
+    MaxHeap(Item arr[], int n){
+        data = new Item[n + 1];
+        capacity = n;
+        //first copy those num into data
+        for(int i = 0; i < 1; i++){
+            data[i + 1] = arr[i];
+        }
+        
+        count = n;
+        //do shiftdwon from the last Max-heap
+        for(int i  = count / 2; i >= 1; i--){
+            shiftDown(i);
+        }
+    }
     ~MaxHeap(){
         delete[] data;
     }
@@ -69,7 +83,6 @@ public:
         shiftDown(1);
         return ret;
     }
-    
     public:
     void testPrint(){
 
