@@ -48,3 +48,46 @@ int getResult(T arr[], int start, int end, T target){
         return getResult(arr, mid + 1, end, target);
     }
 }
+
+// return first index of target
+// if no target, return the first index lt target
+template<typename T>
+int floor(T arr[], int n, T target){
+    assert(n >= 0);
+    // start should from -1, because index of target could be 0
+    int left = -1;
+    int right = n - 1;
+    while(left < right){
+        mid = left + (right - left + 1) / 2;
+        if(target <= arr[mid]){
+            right = mid - 1;
+        }else
+            left = mid;
+    }    
+    assert(left == right);    
+    if(left + 1 < n && arr[left + 1] == target){
+        return left + 1;
+    }
+    // if no target
+    return left;
+}
+
+template<typename T>
+int ceil(T arr[], int n, T target){
+    assert( n >= 0 );
+    // end should be n, because index of target could be n - 1
+    int left = 0, right = n;    
+    while( left < right ){
+        int mid = left + (right - left)/2;
+        if( arr[mid] <= target )
+            left = mid + 1;
+        else // arr[mid] > target
+            right = mid;
+    }
+    assert( left == right );
+    if( right - 1 >= 0 && arr[right - 1] == target )
+        return right -1;
+
+    // if no result
+    return right;
+}
