@@ -14,8 +14,9 @@ int binarySearch(T arr[], int n; T target){
     left = 0;
     right = n - 1;
     while(left <= right){
-        //but here may occur some errors, I will provide another solution in the following codes
-        int mid = (left + right) / 2;
+        //but here may occur some errors
+//         int mid = (left + right) / 2;
+        int mid = left + (right - left) / 2;
         if(arr[mid] == target){
             return mid;
         }else if(target < arr[mid]){
